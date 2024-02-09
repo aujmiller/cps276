@@ -1,13 +1,15 @@
 <?php
 
+$list = "<ul>";
 for ($i = 1; $i < 5; $i++){
-    echo "&nbsp;&nbsp;&nbsp;&nbsp;".$i . "<br>";
+    $list .= "<li>$i</li>";
+    $list .= "<ul>";
     for ($j = 1; $j < 6; $j++){
-    echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$j."<br>";
+      $list .= "<li>$j</li>";
     }
+  $list .= "</ul>";
 }
-
-
+$list .= "</ul>";
 
 ?>
 
@@ -23,6 +25,6 @@ for ($i = 1; $i < 5; $i++){
 
   </head>
   <body>
-
+    <?php echo $list ?>
   </body>
 </html>

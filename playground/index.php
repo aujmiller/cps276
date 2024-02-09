@@ -22,7 +22,6 @@ $string = <<<STR
 <a href="google">Google</a>    
 This is a heredoc multi-line string with "quotes", the double quotes render because we
 are using the heredoc, where both 'single' and "double quotes" render
-$list
 STR;
 
 /* SHOWS HTML SYNTAX
