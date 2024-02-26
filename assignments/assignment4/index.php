@@ -1,15 +1,12 @@
 <?php
 
+$output = "";
+
     if(count($_POST) > 0){
         require_once 'addNames.php';
         $addName = new AddNames();
-        $addName->formControl();
-        $output = $addName->displayNames();
+        $output = $addName->addNameList();
        }
-
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
 
 ?>
 
@@ -32,8 +29,8 @@
         <h1>Add Names</h1>
 
         <div class="form-group">
-      		<input type="submit" class="btn btn-primary" name="addName" value="Add Name" />
-            <input type="submit" class="btn btn-primary" name="clearNames" value="Clear Names" />
+      		<input type="submit" class="btn btn-primary" name="addName" id="addName" value="Add Name" />
+            <input type="submit" class="btn btn-primary" name="clearNames" id="clearNames" value="Clear Names" />
       	</div>
         <div class="mb-3">
             <label for="inputNames" class="form-label">Enter Names</label>
