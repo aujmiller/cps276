@@ -1,6 +1,13 @@
 <?php
 
+$output = "";
 
+if(count($_POST) > 0){
+    require_once 'fileUploadProc.php';
+    $file= new FileUpload();
+    $output = $file->fileUpload();
+
+}
 
 ?>
 
@@ -20,15 +27,15 @@
     
     <div class="container">
         <h1>File Upload</h1>
-        <!-- <a href='path to file list' target='_blank'>Show File List</a> NEED TO ADD PATH -- RUSSET SERVER DIRECTORY WHERE THE PDFs ARE KEPT -->
-        <form method="post" action="#" class="row g-3">
-        <div class="mb-3">
+        <a href='listFilesForm.php' target='_blank'>Show File List</a> 
+        <p><?php echo $output ?> </p>
+        <form method="post" action="#" class="row g-3" enctype="multipart/form-data">
+        <div class="form-group">
             <label for="fileName" class="form-label">File Name</label>
             <input type="text" class="form-control" id="fileName" name="fileName">
         </div>
-        <div class="col-sm">
-            <label for="formFile" class="form-label"></label>
-            <input class="form-control" type="file" id="formFile">
+        <div class="form-group">
+            <input type="file" class="form-control" id="file" name="file">
         </div>
         <div class="form-group">
       		<input type="submit" class="btn btn-primary" name="uploadFile" id="uploadFile" value="Upload File"/>
