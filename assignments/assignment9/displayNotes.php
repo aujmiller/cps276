@@ -30,17 +30,26 @@ $notes = $dt->init();
 
         <a href='addNote.php' target='_blank'>Add Note</a> 
 
-        <input type="date" class="form-control" id="begDate" name="begDate">
-        <input type="date" class="form-control" id="endDate" name="endDate">
+        <div class="mb-3">
+            <label for="begDate" class="form-label">Beginning Date</label>
+            <input type="date" class="form-control" id="begDate" name="begDate">
+        </div>
+
+        <div class="mb-3">
+            <label for="endDate" class="form-label">Ending Date</label>
+            <input type="date" class="form-control" id="endDate" name="endDate">
+        </div>
 
         <div class="form-group">
       		<input type="submit" class="btn btn-primary" name="getNotes" id="getNotes" value="Get Notes" />
       	</div>
 
+          <p><?php echo $notes ?></p>
+
         </form>
     </div>
 
-    <p><?php echo $notes ?></p>
+    
 
 </body>
 

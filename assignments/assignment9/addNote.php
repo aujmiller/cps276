@@ -29,7 +29,10 @@ $output = $test->init();
         <a href='displayNotes.php' target='_blank'>Display Notes</a> 
         <p><?php echo $output ?></p>
 
-        <input type="datetime-local" class="form-control" id="dateTime" name="dateTime">
+        <div class="mb-3">
+            <label for="dateTime" class="form-label">Date and Time</label>
+            <input type="datetime-local" class="form-control" id="dateTime" name="dateTime">
+        </div>
 
         <div class="mb-3">
             <label for="note" class="form-label">Note</label>
