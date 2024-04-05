@@ -1,7 +1,5 @@
 <?php
 
-// $sql = "SELECT date_time, note FROM note WHERE date_time BETWEEN :begDate AND :endDate ORDER BY date_time DESC";
-
 require_once "Pdo_methods.php";
 
 class Date_time extends PdoMethods {
@@ -77,7 +75,7 @@ class Date_time extends PdoMethods {
             return "There was an error retrieving the notes.";
         } else {
             if(count($records) != 0) {
-                $output = "<table><tr><th>Date and Time</th><th>Note</th></tr>";
+                $output = "<table class='table table-striped table-bordered'><tr><th>Date and Time</th><th>Note</th></tr>";
                 foreach($records as $row) {
                     $formattedDate = date("n/j/Y  g:i A", $row['date_time']);
                     $output .= "<tr><td>{$formattedDate}</td><td>{$row['note']}</td></tr>";
